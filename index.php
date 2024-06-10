@@ -33,19 +33,19 @@
         ],
     ];
 
-    $filterByAuthor = function ($movies, $author){
-        $filteredBooks = [];
+    function filter($items, $key, $value){
+        $filteredItem = [];
         
-        foreach($movies as $book){
-         if($book['author'] === $author) {
-            $filteredBooks[] = $book;
+        foreach($items as $item){
+         if($item[$key] === $value) {
+            $filteredItem[] = $item;
         };
     }
 
-    return $filteredBooks;
-    };
+    return $filteredItem;
+    }
 
-    $filteredBooks = $filterByAuthor($movies, 'Robert Greene');
+    $filteredBooks = filter($movies,'author', 'Robert Greene');
     ?>
 
     <ul>
