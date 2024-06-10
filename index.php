@@ -12,7 +12,7 @@
         Books Collection
     </h1>
 
-    <?php $books = [
+    <?php $movies = [
         [
             "title" => "The art of War",
             "author" => "Sun Tzu",
@@ -33,19 +33,33 @@
         ],
     ];
 
+    function filterByAuthor($movies, $author){
+        $filteredBooks = [];
+        
+        foreach($movies as $book){
+         if($book['author'] === $author) {
+            $filteredBooks[] = $book;
+        };
+    }
+
+    return $filteredBooks;
+    }
+
+
     ?>
 
     <ul>
-        <?php foreach ($books as $book) : ?>
-            <?php if ($book['author'] === 'Robert Greene') : ?>
+        <?php foreach (filterByAuthor($movies, 'Robert Greene') as $book) : ?>
+    
             <li>
                 <a href="<?= $book['link']; ?>">
                     <?= $book['title']; ?> (<?= $book['year'] ?> )
                 </a>
             </li>
-            <?php endif ?>
         <?php endforeach ?>
     </ul>
+
 </body>
 
 </html>
+
