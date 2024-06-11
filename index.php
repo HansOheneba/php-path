@@ -1,18 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php 
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PHP Trials</title>
-</head>
 
-<body>
-    <h1>
-        Books Collection
-    </h1>
-
-    <?php $movies = [
+$movies = [
         [
             "title" => "The art of War",
             "author" => "Sun Tzu",
@@ -45,21 +34,6 @@
     return $filteredItem;
     }
 
-    $filteredBooks = filter($movies,'author', 'Robert Greene');
-    ?>
+    $filteredBooks = filter($movies,'year', '1506');
 
-    <ul>
-        <?php foreach ($filteredBooks as $book) : ?>
-    
-            <li>
-                <a href="<?= $book['link']; ?>">
-                    <?= $book['title']; ?> (<?= $book['year'] ?> )
-                </a>
-            </li>
-        <?php endforeach ?>
-    </ul>
-
-</body>
-
-</html>
-
+    require "index.view.php";
