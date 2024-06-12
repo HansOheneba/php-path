@@ -2,24 +2,25 @@
 
 require('functions.php');
 
-$uri = $_SERVER['REQUEST_URI'];
+$uri = parse_url($_SERVER['REQUEST_URI'])['path'];
 
-if ($uri === '/'){
-    require('controllers/index.php');
-    
+
+$routes = [
+'/'=>'controllers/index.php',
+'/about'=>'controllers/about.php',
+'/contact'=>'controllers/contact.php',
+'/mission'=>'controllers/mission.php',
+];
+
+if(array_key_exists($uri, $routes)){
+    require($routes[$uri]);
 }
-elseif($uri === '/about'){
-    require('controllers/about.php');
+else{
+    http_response_code(404);
+
+   require("views/404.php");
+
+    die();
 }
-elseif($uri === '/contact'){
-    require('controllers/contact.php');
-}
-elseif($uri === '/mission'){
-    require('controllers/mission.php');
-}
-
-
-
-
 
 
