@@ -2,21 +2,20 @@
 
 require('functions.php');
 
-$uri = parse_url($_SERVER['REQUEST_URI'])['path'];
+// require("router.php");
 
 
-$routes = [
-'/'=>'controllers/index.php',
-'/about'=>'controllers/about.php',
-'/contact'=>'controllers/contact.php',
-'/mission'=>'controllers/mission.php',
-];
+$dsn = "mysql:host=localhost;port=3306;dbname=path;user=root;charset=utf8mb4";
 
-if(array_key_exists($uri, $routes)){
-    require($routes[$uri]);
+$pdo = new PDO($dsn);
+
+$statement = $pdo->prepare("select * from posts");
+
+$statement->execute();
+
+$posts = $statement->fetchAll(PDO::FETCH_ASSOC);
+
+foreach($posts as $post){
+    echo "<li>" .$post['title'] . "</li>";
+
 }
-else{
-   abort();
-}
-
-

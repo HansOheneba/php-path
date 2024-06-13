@@ -13,10 +13,23 @@ function activeUrl($value)
     return $_SERVER['REQUEST_URI'] === $value;
 };
 
-function abort(){
-    http_response_code(404);
 
-    require('404.php');
+function routeToController($uri, $routes){
+    if(array_key_exists($uri, $routes)){
+        require($routes[$uri]);
+    }
+    else{
+       abort(404);
+    }
+    
+}
+
+
+function abort($code = 404){
+
+    http_response_code($code);
+
+    require("views/{$code}.php");
 
     die();
 }
