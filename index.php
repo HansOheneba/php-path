@@ -7,7 +7,11 @@ require('functions.php');
 
 require ("Database.php");
 
-$db = new Database();
+$dataConfig = require ("config.php");
+
+$config = $dataConfig['database'];
+
+$db = new Database($config);
 
 $posts=$db->query("Select * from posts")->fetchAll(PDO::FETCH_ASSOC);
 
