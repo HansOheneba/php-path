@@ -13,8 +13,11 @@ $config = $dataConfig['database'];
 
 $db = new Database($config);
 
-$posts=$db->query("Select * from posts")->fetchAll(PDO::FETCH_ASSOC);
+$id = ($_GET['id']);
 
-foreach($posts as $post){
-    echo "<li>".$post['title']."</li>";
-}
+$query = "Select * from posts where id = :id";
+
+$posts=$db->query($query, [':id' => $id])->fetchAll(PDO::FETCH_ASSOC);
+
+dd($posts);
+
