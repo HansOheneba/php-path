@@ -16,7 +16,7 @@ require('partials/banner.php');
         </svg>
         <span class="ml-1 font-bold text-lg">Back</span>
     </a>
-       <p class="px-10"><?= $note['body'] ?></p>
+       <p class="px-10"><?= htmlspecialchars($note['body']) ?></p>
       </div>
     </main>
 
