@@ -33,3 +33,9 @@ function abort($code = 404){
 
     die();
 }
+
+function authorize($condition, $status=403){
+    if(!$condition){
+        abort($status);
+    }
+}

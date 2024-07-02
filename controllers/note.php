@@ -1,15 +1,21 @@
-<?php 
+<?php
 
-$dataConfig = require ("config.php");
+$currentUserID = 1;
+$heading = "My notes";
+
+$dataConfig = require("config.php");
 $db = new Database($dataConfig['database']);
 
-$id = $_GET['id'];
+$note = $db->query("select * from notes where id = :id", [ 
+    'id' => $_GET['id']
+    ])->fetchOrAbort();
 
-$note = $db->query("select * from notes where id = :id", ['id' => $id] )->fetch();
 
-//dd($note);
+authorize($note['userID'] === $currentUserID);
 
-$heading = "Your note";
+
+
+
 
 
 require "views/note.view.php";
