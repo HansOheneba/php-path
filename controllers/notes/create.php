@@ -32,5 +32,5 @@ if(empty($errors)){
 
 }
 
-require('views/noteCreate.view.php');
+require('views/notes/create.view.php');
 
