@@ -12,8 +12,7 @@ require('partials/banner.php');
    <div class="w-full rounded-lg bg-gray-200 ">
        <div class="px-4 pt-2 bg-gray-200 rounded-t-lg ">
        <label for="body" class="block mb-2 font-semibold text-gray-900 text-lg">Body</label>
-           <textarea id="body" name="body" rows="4" class="w-full p-2  text-sm text-gray-900 bg-white border-0  focus:ring-0" placeholder="Write down your thoughts..." required><?= $_POST['body'] ?? '' ?>
-           </textarea>
+           <textarea id="body" name="body" rows="4" class="w-full p-2  text-sm text-gray-900 bg-white border-0  focus:ring-0" placeholder="Write down your thoughts..." ><?= $_POST['body'] ?? '' ?></textarea>
            <?php if(isset($errors['body'])): ?>
 
         <p class="text-red-500 text-sm mt-2"><?=$errors['body'] ?></p>
