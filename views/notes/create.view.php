@@ -1,8 +1,6 @@
-<?php
-require('views/partials/head.php');
-require('views/partials/nav.php');
-require('views/partials/banner.php');
-?>
+<?php require base_path('views/partials/head.php') ?>
+<?php require base_path('views/partials/nav.php') ?>
+<?php require base_path('views/partials/banner.php') ?>
 
 
 <main class="px-5">
@@ -23,7 +21,7 @@ require('views/partials/banner.php');
        </div>
        <div class="flex items-center justify-center px-3 pt-2 pb-4">
            <button type="submit" class="inline-flex items-center py-2.5 px-4 text-xs font-medium text-center text-white bg-blue-700 rounded-lg focus:ring-4 focus:ring-blue-200  hover:bg-blue-800">
-               Submit Note
+               Save
            </button>    
        </div>
    </div>
@@ -35,6 +33,6 @@ require('views/partials/banner.php');
 
 
 
-<?php require('views/partials/foot.php'); ?>
+    <?php require base_path('views/partials/foot.php') ?>
 
 </html>
