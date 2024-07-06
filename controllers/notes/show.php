@@ -1,5 +1,7 @@
 <?php
 
+use Core\Database;
+
 $dataConfig = require base_path("config.php");
 $db = new Database($dataConfig['database']);
 
