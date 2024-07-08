@@ -6,7 +6,7 @@
 <main class="px-5">
       <div class="mx-auto max-w-7xl py-6 sm:px-6 lg:px-8 ">
    
-<form method="post">
+<form method="POST" action="/notes">
    <div class="w-full rounded-lg bg-gray-200 ">
        <div class="px-4 pt-2 bg-gray-200 rounded-t-lg ">
        <label for="body" class="block mb-2 font-semibold text-gray-900 text-lg">Body</label>
