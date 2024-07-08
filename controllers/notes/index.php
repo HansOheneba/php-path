@@ -1,8 +1,8 @@
 <?php 
+use Core\App;
 use Core\Database;
 
-$dataConfig = require base_path("config.php");
-$db = new Database($dataConfig['database']);
+$db = App::resolve(Database::class);
 
 $notes = $db -> query("select * from notes where userID = 1")->fetchAll();
 

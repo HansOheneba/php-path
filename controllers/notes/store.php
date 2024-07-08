@@ -1,13 +1,12 @@
 <?php
 
+use Core\App;
 use Core\Database;
 use Core\Validator;
 
 $errors = [];
 
-$dataConfig = require base_path("config.php");
-$db = new Database($dataConfig['database']);
-
+$db = App::resolve(Database::class);
 
 if (!Validator::string($_POST['body'], 1, 1000)) {
     $errors['body'] = "Oh dear... A note body of no more than 1,000 characters is required";
