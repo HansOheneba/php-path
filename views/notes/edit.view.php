@@ -5,14 +5,13 @@
 
 <main class="px-5">
     <div class="mx-auto max-w-7xl py-6 sm:px-6 lg:px-8 ">
-
-        <form method="POST" action="/note">
-            <input type="hidden" name="_method" value="PATCH">
-            <input type="hidden" name="id" value="<?=$note['id']?>">
-
-            <div class="w-full rounded-lg bg-gray-200 ">
+        <div class="w-full rounded-lg bg-gray-200 relative">
+            <form method="POST" action="/note">
+                <input type="hidden" name="_method" value="PATCH">
+                <input type="hidden" name="id" value="<?= $note['id'] ?>">
                 <div class="px-4 pt-2 bg-gray-200 rounded-t-lg ">
-                    <label for="body" class="block mb-2 font-semibold text-gray-900 text-lg">Body</label>
+                    <label for="body" class="block mb-2 font-semibold text-gray-900 text-lg px-4 py-2.5">Note Body</label>
+
                     <textarea id="body" name="body" rows="4" class="w-full p-2  text-sm text-gray-900 bg-white border-0  focus:ring-0" placeholder="Write down your thoughts..."><?= htmlspecialchars($note['body']) ?></textarea>
                     <?php if (isset($errors['body'])) : ?>
 
@@ -30,8 +29,14 @@
                         Update
                     </button>
                 </div>
-            </div>
-        </form>
+                </form>
+                <form action="" method="post" class="absolute top-3 right-4 space-x-2">
+                        <input type="hidden" name="_method" value="DELETE">
+                        <input type="hidden" name="id" value="<?= $note['id'] ?>">
+                        <button class="bg-red-500 text-sm inline-flex text-center font-medium text-white px-4 py-2.5 rounded-lg hover:bg-red-600 transition duration-300">Delete</button>
+                    </form>
+        </div>
+        
 
 
     </div>
