@@ -12,13 +12,15 @@
       <span class="ml-1 font-bold text-sm">Back</span>
     </a>
     <p class="text-gray-700"><?= htmlspecialchars($note['body']) ?></p>
-<form action="" method="post">
-  <input type="hidden" name="_method" value="DELETE">
-  <input type="hidden" name="id" value="<?=$note['id']?>">
-<button class="absolute top-4 right-4 bg-red-500 text-sm text-white px-2 py-1 rounded hover:bg-red-600 transition duration-300">Delete</button>
-</form>
+   
+    <div class="absolute top-4 right-4 space-x-2">
+  <a href="/note/edit?id=<?= $note['id'] ?>">
+  <button class="bg-blue-500 text-sm text-white px-4 py-1 rounded hover:bg-blue-600 transition duration-300">Edit</button>
+  </a>
+</div>
   </div>
 </main>
+
 
 
 

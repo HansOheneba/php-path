@@ -15,5 +15,6 @@ $router -> post('/notes', 'controllers/notes/store.php');
 
 
 $router -> get('/note', 'controllers/notes/show.php');
+$router -> get('/note/edit', 'controllers/notes/edit.php');
 $router -> delete('/note', 'controllers/notes/destroy.php');
 
