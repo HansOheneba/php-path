@@ -4,20 +4,26 @@
 
 <main class="container mx-auto flex-grow py-8">
   <div class="bg-white shadow-lg rounded-lg p-6 relative">
-    <a href="/notes" class="inline-flex items-center border border-black px-2 py-1 rounded-md text-black hover:bg-gray-50 mb-6">
-      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="h-6 w-6">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16l-4-4m0 0l4-4m-4 4h18">
-        </path>
-      </svg>
-      <span class="ml-1 font-bold text-sm">Back</span>
-    </a>
-    <p class="text-gray-700"><?= htmlspecialchars($note['body']) ?></p>
-   
-    <div class="absolute top-4 right-4 space-x-2">
-  <a href="/note/edit?id=<?= $note['id'] ?>">
-  <button class="bg-blue-500 text-sm text-white px-4 py-1 rounded hover:bg-blue-600 transition duration-300">Edit</button>
-  </a>
-</div>
+    <div class="flex items-center justify-between">
+      <a href="/notes" class="inline-flex items-center border border-black py-2 px-4 rounded-md text-black hover:bg-gray-50">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="h-6 w-6">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16l-4-4m0 0l4-4m-4 4h18">
+          </path>
+        </svg>
+        <span class="ml-1 font-bold text-sm">Back</span>
+      </a>
+
+      <a href="/note/edit?id=<?= $note['id'] ?>">
+        <button class="bg-blue-700 text-md text-white py-2 px-6 font-medium rounded-md hover:bg-blue-800 transition duration-300">Edit</button>
+      </a>
+    </div>
+    <div class="py-10">
+      <p class="text-gray-700"><?= htmlspecialchars($note['body']) ?></p>
+
+    </div>
+    <div>
+
+    </div>
   </div>
 </main>
 
