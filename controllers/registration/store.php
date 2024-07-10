@@ -28,31 +28,37 @@ if (!Validator::string($password, 8, 255)) {
 
 if (!empty($errors)) {
 
-   return view("registration/create.view.php", [
+    return view("registration/create.view.php", [
         'errors' => $errors
     ]);
 }
 
 $db = App::resolve(Database::class);
 
-$user = $db->query('select * from users where email = :email',[
+$user = $db->query('select * from users where email = :email', [
     'email' => $email
 ])->fetch();
 
-dd($user);
+if ($user) {
 
-if($user){
     $errors['email'] = 'This email is already registered to an account';
-}
-else{
-    $db->query('insert into users (name, email, password) values (:name,:email, :password)',[
-'email' => $email,
-'name' => $name,
-'password' =>$password
+    return view("registration/create.view.php", [
+        'errors' => $errors]);
+
+} else {
+    $db->query('insert into users (name, email, password) values (:name,:email, :password)', [
+        'email' => $email,
+        'name' => $name,
+        'password' => $password
     ]);
+
+    $_SESSION['user'] = [
+        'email' => $email,
+        'name' => $name,
+    ];
+
+    header('location: /');
+    die();
 }
 
-echo $email;
-echo $name ;
-echo $password;
-echo $passwordConfirm;
+
