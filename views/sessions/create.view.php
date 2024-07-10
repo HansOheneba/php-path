@@ -11,7 +11,7 @@ require base_path('views/partials/nav.php');
             <p class="text-sm text-gray-500 text-center py-4 mb-4">Welcome Back! Please enter your details</p>
 
 
-            <form action="/register" method="POST">
+            <form action="/sessions" method="POST">
 
 
                 <div class="mb-4">
