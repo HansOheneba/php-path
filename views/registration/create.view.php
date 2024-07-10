@@ -5,9 +5,9 @@ require base_path('views/partials/nav.php');
 
 
 <main class="px-5">
-    <div class="flex justify-center items-center h-[90vh] mx-auto max-w-7xl py-6 sm:px-6 lg:px-8">
+    <div class="flex justify-center items-center h-[80vh] mx-auto max-w-7xl py-6 sm:px-6 lg:px-8">
         <div class="bg-white p-8 mx-auto w-full max-w-md rounded-md shadow-md">
-            <h2 class="text-2xl font-semibold  text-center">Register for an account</h2>
+            <h2 class="text-2xl font-semibold  text-center">Register an account</h2>
             <p class="text-sm text-gray-500 text-center py-4 mb-4">Welcome! Please enter your details</p>
 
 
@@ -17,24 +17,25 @@ require base_path('views/partials/nav.php');
                 <div class="mb-4">
                     <label for="email" class="block text-gray-600 font-medium">Email</label>
                     <input type="email" id="email" name="email" class="mt-1 p-2 w-full border rounded-md" value="<?= $_POST['email'] ?? '' ?>" placeholder="Enter your email">
+                    <?php if (isset($errors['email'])) : ?>
+                        <p class="text-red-500 text-sm mt-2"><?= $errors['email'] ?></p>
+                    <?php endif; ?>
                 </div>
-                <?php if (isset($errors['email'])) : ?>
-
-                    <p class="text-red-500 text-sm mt-2"><?= $errors['email'] ?></p>
-
-                <?php endif; ?>
-
 
                 <div class="mb-6">
                     <label for="password" class="block text-gray-600 font-medium">Password</label>
-                    <input type="password" id="password" name="password" class="mt-1 p-2 w-full border rounded-md" placeholder="Enter your password">
+                    <input type="password" id="password" name="password" class="mt-1 p-2 w-full border rounded-md" placeholder="Create a password">
+                    <p class="text-sm text-gray-500 mt-1">Must be at least 8 characters</p>
+                </div>
+                <div class="mb-6">
+                    <label for="passwordconfirm" class="block text-gray-600 font-medium">Confirm password</label>
+                    <input type="password" id="passwordConfirm" name="passwordConfirm" class="mt-1 p-2 w-full border rounded-md" placeholder="Repeat password">
+                    <?php if (isset($errors['password'])) : ?>
+                        <p class="text-red-500 text-sm mt-2"><?= $errors['password'] ?></p>
+                    <?php endif; ?>
                 </div>
 
-                <?php if (isset($errors['password'])) : ?>
 
-                    <p class="text-red-500 text-sm mt-2"><?= $errors['password'] ?></p>
-
-                <?php endif; ?>
 
                 <!-- <div class="w-full flex justify-end pb-5">
                     <a class="text-blue-500 font-semibold text-right text-sm" href="#">Forgot password</a>
