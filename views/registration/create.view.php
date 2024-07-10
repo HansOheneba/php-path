@@ -51,10 +51,11 @@ require base_path('views/partials/nav.php');
                 <button type="submit" class="bg-blue-500 text-white p-2 rounded-md hover:bg-blue-600 focus:outline-none focus:ring focus:border-blue-300 w-full font-semibold">
                     Register
                 </button>
-                <!-- <div class="pt-5 flex justify-center">
-                    <p class="text-gray-500 text-sm">Don't have an account? <a class="text-blue-500 font-semibold"
-                            href="#">Sign up</a></p>
-                </div> -->
+               
+                <div class="pt-5 flex justify-center">
+                    <p class="text-gray-500 text-sm">Already have an account? <a class="text-blue-500 font-semibold"
+                            href="/login">Log in</a></p>
+                </div>
             </form>
         </div>
     </div>
