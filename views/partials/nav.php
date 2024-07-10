@@ -3,7 +3,7 @@
     <div class="flex h-16 items-center justify-between">
       <div class="flex items-center">
         <div class="flex-shrink-0">
-          <img class="h-10 w-10" src="https://cdn-icons-png.freepik.com/512/3643/3643181.png?uid=R110478509&ga=GA1.1.860533322.1720434402" alt="Your Company">
+          <img class="h-10 w-10" src="https://cdn-icons-png.flaticon.com/512/3075/3075770.png" alt="Your Company">
         </div>
         <div class="hidden md:block">
           <div class="ml-10 flex items-baseline space-x-4">

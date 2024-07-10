@@ -22,7 +22,7 @@
 
                 </div>
                 <div class="flex items-center justify-end gap-2 px-3 pt-2 pb-4">
-                    <a href="/notes" class="inline-flex items-center py-2.5 px-4 text-sm font-medium text-center text-white bg-gray-500 rounded-lg focus:ring-4 focus:ring-blue-200  hover:bg-gray-700">
+                    <a href="/notes" class="inline-flex items-center py-2.5 px-4 text-sm font-medium text-center text-blue-700 border-2 border-blue-500 rounded-lg focus:ring-4 focus:ring-blue-200  hover:bg-blue-300">
                         Cancel
                     </a>
                     <button type="submit" class="inline-flex items-center py-2.5 px-4 text-sm font-medium text-center text-white bg-blue-700 rounded-lg focus:ring-4 focus:ring-blue-200  hover:bg-blue-800">
@@ -30,7 +30,7 @@
                     </button>
                 </div>
                 </form>
-                <form action="" method="post" class="absolute top-3 right-4 space-x-2">
+                <form action="/note" method="post" class="absolute top-3 right-4 space-x-2">
                         <input type="hidden" name="_method" value="DELETE">
                         <input type="hidden" name="id" value="<?= $note['id'] ?>">
                         <button class="bg-red-500 text-sm inline-flex text-center font-medium text-white px-4 py-2.5 rounded-lg hover:bg-red-600 transition duration-300">Delete</button>

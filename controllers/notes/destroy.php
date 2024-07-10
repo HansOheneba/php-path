@@ -16,7 +16,7 @@ authorize($note['userID'] === $currentUserID);
 
 
 $note = $db->query("delete from notes where id = :id", [
-    'id' => $_GET['id']
+    'id' => $_POST['id']
 ])->fetchAll();
 
 header('location: /notes');
