@@ -28,9 +28,15 @@
                   <img class="h-8 w-8 rounded-full" src="https://cdn-icons-png.flaticon.com/512/3177/3177440.png">
                 </button>
               <?php else : ?>
-                <a href="/register" class="inline-flex items-center py-2.5 px-4 text-sm font-medium text-center text-white border-[1px] border-white rounded-lg focus:ring-2 focus:ring-white  hover:bg-gray-700">
-                  Register
-                </a>
+                <div>
+                  <a href="/login" class="inline-flex w-20 justify-center items-center py-2.5 px-4 text-sm font-medium text-center text-white bg-blue-600 border-[1px] border-blue-600 rounded-lg focus:ring-2 focus:ring-blue-600 hover:bg-blue-700">
+                    Log in
+                  </a>
+                  <a href="/register" class="inline-flex w-20 justify-center items-center py-2.5 px-4 text-sm font-medium text-center text-white border-[1px] border-white rounded-lg focus:ring-2 focus:ring-white hover:bg-gray-700">
+                    Register
+                  </a>
+
+                </div>
               <?php endif ?>
             </div>
 
