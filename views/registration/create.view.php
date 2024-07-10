@@ -16,7 +16,7 @@ require base_path('views/partials/nav.php');
 
                 <div class="mb-4">
                     <label for="email" class="block text-gray-600 font-medium">Email</label>
-                    <input type="email" id="email" name="email" class="mt-1 p-2 w-full border rounded-md" placeholder="Enter your email">
+                    <input type="email" id="email" name="email" class="mt-1 p-2 w-full border rounded-md" value="<?= $_POST['email'] ?? '' ?>" placeholder="Enter your email">
                 </div>
                 <?php if (isset($errors['email'])) : ?>
 
