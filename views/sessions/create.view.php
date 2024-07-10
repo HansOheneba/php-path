@@ -24,7 +24,7 @@ require base_path('views/partials/nav.php');
 
                 <div class="mb-6">
                     <label for="password" class="block text-gray-600 font-medium">Password</label>
-                    <input type="password" id="password" name="password" class="mt-1 p-2 w-full border rounded-md" placeholder="Create a password">
+                    <input type="password" id="password" name="password" class="mt-1 p-2 w-full border rounded-md" placeholder="Enter your password">
                 </div>
 
 
