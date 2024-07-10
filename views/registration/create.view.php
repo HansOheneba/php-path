@@ -18,7 +18,14 @@ require base_path('views/partials/nav.php');
                     <label for="email" class="block text-gray-600 font-medium">Email</label>
                     <input type="email" id="email" name="email" class="mt-1 p-2 w-full border rounded-md" value="<?= $_POST['email'] ?? '' ?>" placeholder="Enter your email">
                     <?php if (isset($errors['email'])) : ?>
-                        <p class="text-red-500 text-sm mt-2"><?= $errors['email'] ?></p>
+                        <p class="text-red-500 text-sm"><?= $errors['email'] ?></p>
+                    <?php endif; ?>
+                </div>
+                <div class="mb-4">
+                    <label for="name" class="block text-gray-600 font-medium">Username</label>
+                    <input type="text" id="name" name="name" class="mt-1 p-2 w-full border rounded-md" value="<?= $_POST['email'] ?? '' ?>" placeholder="Enter your username">
+                    <?php if (isset($errors['name'])) : ?>
+                        <p class="text-red-500 text-sm"><?= $errors['name'] ?></p>
                     <?php endif; ?>
                 </div>
 
@@ -31,7 +38,7 @@ require base_path('views/partials/nav.php');
                     <label for="passwordconfirm" class="block text-gray-600 font-medium">Confirm password</label>
                     <input type="password" id="passwordConfirm" name="passwordConfirm" class="mt-1 p-2 w-full border rounded-md" placeholder="Repeat password">
                     <?php if (isset($errors['password'])) : ?>
-                        <p class="text-red-500 text-sm mt-2"><?= $errors['password'] ?></p>
+                        <p class="text-red-500 text-sm"><?= $errors['password'] ?></p>
                     <?php endif; ?>
                 </div>
 

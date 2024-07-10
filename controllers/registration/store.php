@@ -6,6 +6,7 @@ use Core\Database;
 use Core\Validator;
 
 $email = $_POST['email'];
+$name = $_POST['name'];
 $password = $_POST['password'];
 $passwordConfirm = $_POST['passwordConfirm'];
 
@@ -34,13 +35,24 @@ if (!empty($errors)) {
 
 $db = App::resolve(Database::class);
 
-$result = $db->query('select * from users where email = :email',[
+$user = $db->query('select * from users where email = :email',[
     'email' => $email
 ])->fetch();
 
-dd($result);
+dd($user);
 
+if($user){
+    $errors['email'] = 'This email is already registered to an account';
+}
+else{
+    $db->query('insert into users (name, email, password) values (:name,:email, :password)',[
+'email' => $email,
+'name' => $name,
+'password' =>$password
+    ]);
+}
 
-echo $email = $_POST['email'];
-echo $password = $_POST['password'];
-echo $passwordConfirm = $_POST['passwordConfirm'];
+echo $email;
+echo $name ;
+echo $password;
+echo $passwordConfirm;
