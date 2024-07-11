@@ -28,9 +28,14 @@
                   <span class="sr-only">Open user menu</span>
                   <img class="h-8 w-8 rounded-full" src="https://cdn-icons-png.flaticon.com/512/3177/3177440.png">
                 </button>
-                <a href="#" class="inline-flex w-20 justify-center items-center py-2.5 px-4 text-sm font-medium text-center text-white border-[1px] border-white rounded-lg focus:ring-2 focus:ring-white hover:bg-gray-700">
+
+                <form action="/sessions" method="post">
+                  <input type="hidden" name="_method" value="DELETE">
+                  <button type="submit" class="inline-flex w-20 justify-center items-center py-2.5 px-4 text-sm font-medium text-center text-white border-[1px] border-white rounded-lg focus:ring-2 focus:ring-white hover:bg-gray-700">
                     Logout
-                  </a>
+                  </button>
+                </form>
+               
               </div>
               <?php else : ?>
                 <div>

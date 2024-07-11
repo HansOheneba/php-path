@@ -1,3 +1,4 @@
 <?php 
-dd('logout');
 session_destroy();
+
+header('location:/login');
