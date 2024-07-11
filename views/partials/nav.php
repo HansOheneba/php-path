@@ -22,11 +22,16 @@
           <div class="relative ml-3">
             <div>
               <?php if ($_SESSION['user'] ?? false) : ?>
-                <button type="button" class="relative flex max-w-xs items-center rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800" id="user-menu-button" aria-expanded="false" aria-haspopup="true">
+              <div class="flex gap-4">
+              <button type="button" class="relative flex max-w-xs items-center rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800" id="user-menu-button" aria-expanded="false" aria-haspopup="true">
                   <span class="absolute -inset-1.5"></span>
                   <span class="sr-only">Open user menu</span>
                   <img class="h-8 w-8 rounded-full" src="https://cdn-icons-png.flaticon.com/512/3177/3177440.png">
                 </button>
+                <a href="#" class="inline-flex w-20 justify-center items-center py-2.5 px-4 text-sm font-medium text-center text-white border-[1px] border-white rounded-lg focus:ring-2 focus:ring-white hover:bg-gray-700">
+                    Logout
+                  </a>
+              </div>
               <?php else : ?>
                 <div>
                   <a href="/login" class="inline-flex w-20 justify-center items-center py-2.5 px-4 text-sm font-medium text-center text-white bg-blue-600 border-[1px] border-blue-600 rounded-lg focus:ring-2 focus:ring-blue-600 hover:bg-blue-700">

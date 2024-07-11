@@ -52,8 +52,10 @@ if ($user) {
         'password' => password_hash($password, PASSWORD_DEFAULT)
     ]);
 
-   login();
-
+   login([
+    'email' => $email,
+    'name' => $name
+   ]);
     header('location: /');
     die();
 }
