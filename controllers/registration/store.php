@@ -43,21 +43,23 @@ if ($user) {
 
     $errors['email'] = 'This email is already registered to an account';
     return view("registration/create.view.php", [
-        'errors' => $errors]);
-
+        'errors' => $errors
+    ]);
 } else {
     $db->query('insert into users (name, email, password) values (:name,:email, :password)', [
         'email' => $email,
         'name' => $name,
         'password' => password_hash($password, PASSWORD_DEFAULT)
     ]);
-
-   login([
-    'email' => $email,
-    'name' => $name
-   ]);
+    $user = $db->query('select * from users where email = :email', [
+        'email' => $email
+    ])->fetch();
+    // dd($user);
+    login([
+        'id' => $user['id'],
+        'email' => $email,
+        'name' => $name
+    ]);
     header('location: /');
     die();
 }
-
-

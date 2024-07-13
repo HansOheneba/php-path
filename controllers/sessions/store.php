@@ -37,11 +37,13 @@ if($user){
 
     if(password_verify($password, $user['password'])){
         login([
+            'id'=> $user['id'],
             'email'=> $email,
             'name' => $user['name']
         ]);
+
+        header('location: /');
         
-    header('location: /');
     die;    
     }
         

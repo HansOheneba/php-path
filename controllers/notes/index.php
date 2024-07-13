@@ -4,9 +4,9 @@ use Core\Database;
 
 $db = App::resolve(Database::class);
 
-$notes = $db -> query("select * from notes where userID = 1")->fetchAll();
-
-
+$notes = $db -> query("select * from notes where userID = :userID",[
+    "userID" => $_SESSION['user']["id"]
+])->fetchAll();
 
 
 

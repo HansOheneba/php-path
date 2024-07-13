@@ -26,7 +26,7 @@ if (empty($errors)) {
         'INSERT INTO notes(body, userID) VALUES(:body, :userID)',
         [
             'body' => $_POST['body'],
-            'userID' => 1
+            "userID" => $_SESSION['user']["id"]
         ]
     );
 }
