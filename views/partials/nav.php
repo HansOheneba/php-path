@@ -12,7 +12,10 @@
             <a href="/about" class="<?= activeUrl('/about') ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white' ?> rounded-md  px-3 py-2 text-sm font-medium">About</a>
             <a href="/contact" class="<?= activeUrl('/contact') ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white' ?> rounded-md  px-3 py-2 text-sm font-medium">Contact</a>
             <a href="/mission" class="<?= activeUrl('/mission') ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white' ?> rounded-md  px-3 py-2 text-sm font-medium">Mission</a>
+<?php  if (isset($_SESSION['user'])) : ?>
             <a href="/notes" class="<?= activeUrl('/notes') ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white' ?> rounded-md  px-3 py-2 text-sm font-medium">Notes</a>
+<?php endif ; ?>
+
           </div>
         </div>
 

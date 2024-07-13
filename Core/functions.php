@@ -52,3 +52,8 @@ function login($user){
     session_regenerate_id();
 
 };
+
+function logout(){
+    $_SESSION = [];
+    session_destroy(); 
+}

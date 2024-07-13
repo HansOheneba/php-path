@@ -1,0 +1,15 @@
+{
+    "name": "hanso/php-path",
+    "authors": [
+        {
+            "name": "Hans Opoku",
+            "email": "88454205+HansOheneba@users.noreply.github.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Core\\":"/Core"
+        }
+    }
+}
