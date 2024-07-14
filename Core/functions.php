@@ -59,3 +59,11 @@ function logout(){
     $_SESSION = [];
     session_destroy(); 
 }
+
+function flashCreate(string $name, string $message){
+
+    if (isset($_SESSION['flash'][$name])) {
+       unset($_SESSION['flash'][$name]);
+    }
+    $_SESSION['flash'][$name] = ['message' => $message]; 
+ }
