@@ -4,7 +4,7 @@ require base_path('views/partials/nav.php');
 ?>
 
 
-<main class="px-5">
+<main class="px-5 py-10">
     <div class="flex justify-center items-center h-[80vh] mx-auto max-w-7xl py-6 sm:px-6 lg:px-8">
         <div class="bg-white p-8 mx-auto w-full max-w-md rounded-md shadow-md">
             <h2 class="text-2xl font-semibold  text-center">Register an account</h2>
