@@ -9,6 +9,17 @@ require('partials/banner.php');
       <div class="mx-auto max-w-7xl py-6 sm:px-6 lg:px-8">
         <h1>You are now in the "Homepage"</h1>
       </div>
+      <br>
+      <br>
+      <?php 
+      if($_SESSION['flash'] ?? false){
+      $flash = $_SESSION['flash'];  
+      $_SESSION['flash'] =[]; 
+      echo $flash;
+      }
+      
+      
+      ?>
     </main>
 
 

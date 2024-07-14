@@ -48,6 +48,8 @@ function login($user){
         'email' => $user['email'],
         'name' => $user['name']
     ];
+    $_SESSION['flash'] = "Log in Successful";
+
 
     session_regenerate_id();
 

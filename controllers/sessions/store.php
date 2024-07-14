@@ -41,7 +41,7 @@ if($user){
             'email'=> $email,
             'name' => $user['name']
         ]);
-
+        // dd($_SESSION);
         header('location: /');
         
     die;    
