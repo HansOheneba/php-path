@@ -86,11 +86,11 @@
             </div>
           <?php endif ?>
           </div>
-          <div x-show="dropdownOpen" @click.outside="dropdownOpen = false" x-cloak class="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button" tabindex="-1">
+          <!-- <div x-show="dropdownOpen" @click.outside="dropdownOpen=false" x-transition:enter="transition ease-out duration-100" x-transition:enter-start="opacity-0 scale-90" x-transition:enter-end="opacity-100 scale-100" x-transition:leave="transition ease-in duration-100" x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-90" x-cloak class="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button" tabindex="-1">
             <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-0">Your Profile</a>
             <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-1">Settings</a>
             <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-2">Sign out</a>
-          </div>
+          </div> -->
         </div>
       </div>
     </div>
@@ -109,7 +109,7 @@
   </div>
   </div>
 
-  <div x-show="open" x-transition:enter="transition ease-out duration-100" x-transition:enter-start="opacity-0 scale-90" x-transition:enter-end="opacity-100 scale-100" x-transition:leave="transition ease-in duration-100" x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-90" class="md:hidden" id="mobile-menu">
+  <div x-show="open" @click.outside="open=false" x-transition:enter="transition ease-out duration-100" x-transition:enter-start="opacity-0 scale-90" x-transition:enter-end="opacity-100 scale-100" x-transition:leave="transition ease-in duration-100" x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-90" class="md:hidden" id="mobile-menu">
     <div class="space-y-1 px-2 pb-3 pt-2 sm:px-3">
       <a href="/" class=" <?= activeUrl('/') ? 'bg-gray-900' : 'bg-transparent' ?>  block rounded-md  px-3 py-2 text-base font-medium text-white" aria-current="page">Home</a>
       <a href="/about" class=" <?= activeUrl('/about') ? 'bg-gray-900' : 'bg-transparent' ?>  block rounded-md px-3 py-2 text-base font-medium text-gray-300">About</a>
@@ -153,11 +153,11 @@
                           <form action="/sessions" method="post">
                             <input type="hidden" name="_method" value="DELETE">
                             <div class="flex justify-center mt-6">
-                              <button for="show" @click="modelOpen = false" type="button" class="mr-2 w-1/2 py-2 text-sm tracking-wide capitalize transition-colors border border-gray-300 duration-200 transform bg-white hover:bg-gray-200 rounded-md">
+                              <button for="show" @click="modelOpen = false" type="button" class="mr-2 w-1/2 py-2 text-sm font-semibold tracking-wide capitalize transition-colors border border-gray-300 duration-200 transform bg-white hover:bg-gray-200 rounded-md">
                                 Cancel
                               </button>
 
-                              <button class="justify-center text-white text-md bg-red-500 hover:bg-red-600 border border-gray-200 focus:ring-4 focus:outline-none shadow-md focus:ring-gray-100 font-medium rounded-lg text-sm w-1/2 py-2.5 text-center inline-flex items-center">
+                              <button class="justify-center text-white text-md bg-red-500 hover:bg-red-600 border border-gray-200 focus:ring-4 focus:outline-none shadow-md focus:ring-gray-100 font-semibold rounded-lg text-sm w-1/2 py-2.5 text-center inline-flex items-center">
                                 <span>Logout</span>
                               </button>
                           </form>
@@ -175,4 +175,23 @@
       </div>
     </div>
   </div>
+  <?php if($_SESSION['flash'] ?? false) : ?>
+
+<?php 
+  $toast = $_SESSION['flash'];
+  unset($_SESSION['flash']);
+  ?>
+<div x-data="{ show: false }" x-init="setTimeout(() => { show = true; setTimeout(() => show = false, 3000); }, 500)">
+      <div x-show="show" 
+           x-transition:enter="transition ease-out duration-300"
+           x-transition:enter-start="opacity-0 transform translate-y-4"
+           x-transition:enter-end="opacity-100 transform translate-y-0"
+           x-transition:leave="transition ease-in duration-300"
+           x-transition:leave-start="opacity-100 transform translate-y-0"
+           x-transition:leave-end="opacity-0 transform translate-y-4"
+           class="fixed bottom-4 right-4 w-64 p-4 bg-green-500 text-white rounded shadow-lg">
+          <?= $toast ?>
+      </div>
+</div>
+<?php endif ?>
 </nav>

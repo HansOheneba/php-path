@@ -60,10 +60,21 @@ function logout(){
     session_destroy(); 
 }
 
-function flashCreate(string $name, string $message){
+function setFlashMessage($message, $type = 'success') {
+    $_SESSION['flash_message'] = $message;
+    $_SESSION['flash_message_type'] = $type;
+}
 
-    if (isset($_SESSION['flash'][$name])) {
-       unset($_SESSION['flash'][$name]);
+// Function to get and clear the flash message
+function getFlashMessage() {
+    if (isset($_SESSION['flash_message'])) {
+        $message = $_SESSION['flash_message'];
+        $type = $_SESSION['flash_message_type'];
+        unset($_SESSION['flash_message'], $_SESSION['flash_message_type']);
+        return ['message' => $message, 'type' => $type];
     }
-    $_SESSION['flash'][$name] = ['message' => $message]; 
- }
+    return null;
+}
+
+// Example usage
+setFlashMessage('This is a success message!', 'success');
