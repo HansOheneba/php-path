@@ -175,23 +175,5 @@
       </div>
     </div>
   </div>
-  <?php if($_SESSION['flash'] ?? false) : ?>
-
-<?php 
-  $toast = $_SESSION['flash'];
-  unset($_SESSION['flash']);
-  ?>
-<div x-data="{ show: false }" x-init="setTimeout(() => { show = true; setTimeout(() => show = false, 3000); }, 500)">
-      <div x-show="show" 
-           x-transition:enter="transition ease-out duration-300"
-           x-transition:enter-start="opacity-0 transform translate-y-4"
-           x-transition:enter-end="opacity-100 transform translate-y-0"
-           x-transition:leave="transition ease-in duration-300"
-           x-transition:leave-start="opacity-100 transform translate-y-0"
-           x-transition:leave-end="opacity-0 transform translate-y-4"
-           class="fixed bottom-4 right-4 w-64 p-4 bg-green-500 text-white rounded shadow-lg">
-          <?= $toast ?>
-      </div>
-</div>
-<?php endif ?>
+  
 </nav>
