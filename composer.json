@@ -6,7 +6,9 @@
             "email": "88454205+HansOheneba@users.noreply.github.com"
         }
     ],
-    "require": {},
+    "require": {
+        "firebase/php-jwt": "^6.10"
+    },
     "autoload": {
         "psr-4": {
             "Core\\":"/Core"

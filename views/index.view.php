@@ -11,7 +11,9 @@ require('partials/banner.php');
   </div>
   <br>
   <br>
-<?php $_SESSION['flash'] = 'Logged In Successfully' ?>
+ 
+
+
   <?php if ($_SESSION['flash'] ?? false) : ?>
     <?php
     $toast = $_SESSION['flash'];
@@ -26,7 +28,7 @@ require('partials/banner.php');
              x-transition:leave="transition ease-in duration-300"
              x-transition:leave-start="opacity-100 transform translate-y-0"
              x-transition:leave-end="opacity-0 transform translate-y-4"
-      class="absolute bottom-4 right-4 flex items-center p-4 rounded-lg text-green-500 bg-gray-50 w-fit shadow-md">
+      class="absolute bottom-10 md:right-16 flex items-center p-4 rounded-lg text-green-500 bg-white w-fit shadow-md">
       <i class="fa-solid fa-check"></i>
   <span class="sr-only">Info</span>
   <div class="ms-3 text-sm font-medium text-gray-800">
