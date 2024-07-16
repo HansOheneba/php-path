@@ -59,7 +59,8 @@ if ($user) {
         'id' => $user['id'],
         'email' => $email,
         'name' => $name
-    ]);
+    ],
+$message = 'Account Created Successfully');
     header('location: /');
     die();
 }

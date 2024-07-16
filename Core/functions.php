@@ -42,13 +42,13 @@ function view($path, $attributes = [])
     require base_path('views/' . $path);
 }
 
-function login($user){
+function login($user, $message){
     $_SESSION['user'] = [
         'id' => $user['id'],
         'email' => $user['email'],
         'name' => $user['name']
     ];
-    $_SESSION['flash'] = "Log in Successful";
+    $_SESSION['flash'] = $message;
 
 
     session_regenerate_id();

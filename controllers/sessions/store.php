@@ -40,8 +40,8 @@ if($user){
             'id'=> $user['id'],
             'email'=> $email,
             'name' => $user['name']
-        ]);
-        // dd($_SESSION);
+        ], $message = 'Logged in Successfully');
+        
         header('location: /');
         
     die;    

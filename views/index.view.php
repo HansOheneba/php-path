@@ -12,14 +12,12 @@ require('partials/banner.php');
   <br>
   <br>
  
-
-
   <?php if ($_SESSION['flash'] ?? false) : ?>
     <?php
     $toast = $_SESSION['flash'];
     unset($_SESSION['flash']);
     ?>
-    <div x-data="{ show: false }" x-init="setTimeout(() => { show = true; setTimeout(() => show = false, 3000); }, 500)">
+    <div x-data="{ show: false }" x-init="setTimeout(() => { show = true; setTimeout(() => show = false, 4000); }, 500)">
       <div
       x-show="show" 
              x-transition:enter="transition ease-out duration-300"
